@@ -46,7 +46,7 @@ decoded = TimeDistributed(Dense(X.shape[1]))(decoded)
 autoencoder = Model(inputs=input_ad, outputs=decoded)
 autoencoder.compile(optimizer='adam', loss='mse')
 
-print("⏳ Training LSTM Autoencoder for anomaly detection...")
+print(" Training LSTM Autoencoder for anomaly detection...")
 early_stop = EarlyStopping(monitor='val_loss', patience=2, restore_best_weights=True)
 
 autoencoder.fit(
