@@ -93,6 +93,6 @@ axs[1, 1].legend()
 plt.tight_layout(rect=[0, 0.03, 1, 0.95])
 plt.show()
 
-print("📊 Detection Report (LightGBM):")
+print(" Detection Report (LightGBM):")
 print(classification_report(y_test, y_pred))
 
