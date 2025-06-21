@@ -47,5 +47,5 @@ joblib.dump(scaler, 'models/scaler.pkl')
 joblib.dump(lgb_model, 'models/lightgbm_model.pkl')
 dl_model.save('models/dl_model.h5')
 
-print("✅ Scaler and models saved successfully!")
+print("Scaler and models saved successfully!")
 
