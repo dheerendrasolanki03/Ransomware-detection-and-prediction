@@ -19,12 +19,12 @@ sql_query = "SELECT * FROM your_table_name"
 df = pd.read_sql(sql_query, conn)
 conn.close()
 
-print("✅ Data loaded from MySQL:")
+print("Data loaded from MySQL:")
 print(df.head())
 
 # === Step 3: Load your trained ML model ===
 model = joblib.load("lightgbm_models.pkl")  # Update path if needed
-print("✅ Model loaded.")
+print("Model loaded.")
 
 # === Step 4: Preprocess features (drop label column if exists) ===
 features = df.drop(columns=["label"], errors="ignore")
@@ -35,12 +35,12 @@ features = df.drop(columns=["label"], errors="ignore")
 
 # === Step 5: Make predictions ===
 predictions = model.predict(features)
-print("✅ Predictions:")
+print("Predictions:")
 print(predictions)
 
 # === Step 6 (Optional): Evaluate if true labels exist ===
 if "label" in df.columns:
     from sklearn.metrics import classification_report # type: ignore
-    print("✅ Classification Report:")
+    print("Classification Report:")
     print(classification_report(df["label"], predictions))
 
