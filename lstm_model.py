@@ -43,7 +43,7 @@ output_ts = Dense(1, activation='sigmoid')(x_ts)
 lstm_model = Model(inputs=input_ts, outputs=output_ts)
 lstm_model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 
-print("⏳ Training LSTM for future prediction...")
+print("Training LSTM for future prediction...")
 early_stop = EarlyStopping(monitor='val_loss', patience=3, restore_best_weights=True)
 
 lstm_model.fit(
